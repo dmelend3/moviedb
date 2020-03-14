@@ -1,13 +1,16 @@
 <template>
-  <v-navigation-drawer app></v-navigation-drawer>
+  <v-navigation-drawer :value="drawer" app clipped></v-navigation-drawer>
 </template>
 
 <script>
-  export default {
-    name: "Drawer"
+import { mapGetters } from "vuex";
+
+export default {
+  name: "Drawer",
+  computed: {
+    ...mapGetters({
+      drawer: "getDrawer"
+    })
   }
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
