@@ -8,13 +8,16 @@ export default new Vuex.Store({
     drawer: false
   },
   getters: {
-    getDrawer: state => state.drawer
+    getDrawer: state => state.drawer,
+    getUser: state => state.user    
   },
   mutations: {
-    changeDrawer: ( state, status ) => (state.drawer = status)
+    changeDrawer: ( state, status ) => (state.drawer = status),
+    settingUser: (state, user) => (state.user = user)
   },
   actions: {
-    hideDrawer: ({commit}) => commit("changeDrawer", false),
-    showDrawer: ({commit}) => commit("changeDrawer", true)
+    hideDrawer: ({ commit }) => commit("changeDrawer", false),
+    showDrawer: ({ commit }) => commit("changeDrawer", true),
+    setUser: ({ commit }, user) => commit("settingUser", user)
   }
 });
